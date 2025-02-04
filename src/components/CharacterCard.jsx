@@ -1,8 +1,12 @@
 
 
-function CharacterCard() {
+function CharacterCard({info}) {
   return (
-    <div>CharacterCard</div>
+    <article>
+      <img src={info.image} alt={info.name} />
+      <h1>{info.name}</h1>
+      <p>{info.species}</p>
+    </article>
   )
 }
 

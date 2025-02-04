@@ -6,11 +6,12 @@ function api (){
     .then((data)=>{
         //console.log(Array.isArray(data));
         const newArray = data.map((character)=>{
+            const image = character.image ? character.image : 'https://placehold.co/200x300';
             return {
                 id: character.id,
                 name: character.name,
                 species: character.species,
-                image: character.image,
+                image: image,
                 gender: character.gender,
                 house: character.house,
                 alive: character.alive

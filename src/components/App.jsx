@@ -16,7 +16,7 @@ function App() {
   return (
    <>
    <Routes>
-    <Route path="/" element = {<CharacterList />}/>
+    <Route path="/" element = {<CharacterList characters={characters} />}/>
    </Routes>
    </>
   )
