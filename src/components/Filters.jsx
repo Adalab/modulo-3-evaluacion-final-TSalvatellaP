@@ -1,8 +1,20 @@
+import FilterByName from "./FilterByName"
+import FilterByHouse from "./FilterByHouse"
 
 
-function Filters() {
+function Filters({setFilterName}) {
+  const handleForme = (ev) => {
+    ev.preventDefault();
+
+  }
+
+
   return (
-    <div>Filters</div>
+   <form onSubmit={handleForme} >
+    <FilterByName setFilterName = {setFilterName} />
+    <FilterByHouse />
+    
+   </form>
   )
 }
 
