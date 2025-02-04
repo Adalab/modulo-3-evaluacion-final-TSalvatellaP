@@ -2,18 +2,17 @@ import FilterByName from "./FilterByName"
 import FilterByHouse from "./FilterByHouse"
 
 
-function Filters({setFilterName}) {
-  const handleForme = (ev) => {
+function Filters({setFilterName, setFilterHouse}) {
+  const handleForm = (ev) => {
     ev.preventDefault();
 
   }
 
 
   return (
-   <form onSubmit={handleForme} >
+   <form onSubmit={handleForm} >
     <FilterByName setFilterName = {setFilterName} />
-    <FilterByHouse />
-    
+    <FilterByHouse setFilterHouse = {setFilterHouse}/>
    </form>
   )
 }

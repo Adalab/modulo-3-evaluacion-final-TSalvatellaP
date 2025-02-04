@@ -1,6 +1,6 @@
 function api (){
     return fetch(
-        'https://hp-api.onrender.com/api/characters/house/gryffindor'
+        'https://hp-api.onrender.com/api/characters'
     )
     .then((resp) => resp.json())
     .then((data)=>{
