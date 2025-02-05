@@ -5,9 +5,9 @@ function FilterByWizard({isWizard, setIsWizard}) {
         setIsWizard(ev.target.checked);
     }
   return (
-    <div>
-        <label htmlFor="">
-            <input 
+    <div className="checkbox-container" >
+        <label htmlFor="wizard-checkbox" className="check-label"  >
+            <input className="checkbox"
             id="wizard-checkbox"
             type="checkbox" 
             checked = {isWizard}

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function BtnReset({handleReset}) {
    return (
     <div>
-      <button onClick={handleReset} >
+      <button onClick={handleReset} className="btnReset">
         Reset
       </button>
     </div>

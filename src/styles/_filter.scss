@@ -1,0 +1,40 @@
+.form{
+    font-size: 2rem;
+    font-family: $font_text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    
+}
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+}
+.checks {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+   
+}
+.btnReset{
+    @include button ();
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+.check-label{
+    display: flex;
+    align-items: center;
+}
+.checkbox {
+    @include check();
+}

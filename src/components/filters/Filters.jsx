@@ -14,23 +14,27 @@ function Filters({setFilterName, setFilterHouse, filterHouse, filterName, filter
 
 
   return (
-   <form onSubmit={handleForm} >
-      <FilterByName 
-      setFilterName = {setFilterName} 
-      filterName = {filterName} 
-      />
-      <FilterByHouse 
-      setFilterHouse = {setFilterHouse} 
-      filterHouse = {filterHouse} 
-      />
-      <FilterByGender 
-      setFilterGender = {setFilterGender}
-      filterGender = {filterGender}
-      />
-      <FilterByWizard
-      setIsWizard = {setIsWizard}
-      isWizard = {isWizard}
-      />
+   <form onSubmit={handleForm} className="form" >
+      <div className="filters">
+        <FilterByName
+        setFilterName = {setFilterName}
+        filterName = {filterName}
+        />
+        <FilterByHouse
+        setFilterHouse = {setFilterHouse}
+        filterHouse = {filterHouse}
+        />
+      </div>
+      <div className="checks" >
+        <FilterByGender
+        setFilterGender = {setFilterGender}
+        filterGender = {filterGender}
+        />
+        <FilterByWizard
+        setIsWizard = {setIsWizard}
+        isWizard = {isWizard}
+        />
+      </div>
       <BtnReset 
       handleReset = {handleReset}
       />

@@ -1,0 +1,33 @@
+@mixin button() {
+    background-color:$color_marron; 
+    color:white; 
+    padding: 10px 20px;
+    border: 0; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease; 
+        &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    }
+  }
+
+  @mixin check(){
+    appearance: none;
+    width: $size-checkbox;
+    height: $size-checkbox;
+    border: 2px solid $color_marron;
+    border-radius: $radio-borde;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color $transicion, border-color $transicion;
+  
+    &:checked {
+      background-color: $color_burdeos;
+      border-color: $color_amarillo;
+  
+      &::before {
+        opacity: 1;
+      }
+    }
+
+  }

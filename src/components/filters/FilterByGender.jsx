@@ -11,9 +11,9 @@ function FilterByGender({filterGender, setFilterGender}) {
           }
     }
   return (
-    <div>
-        <label htmlFor="female">
-            <input
+    <div className="checkbox-container" >
+        <label htmlFor="female" className="check-label" >
+            <input className="checkbox"
             type="checkbox"
             value= "female"
             checked = {filterGender.includes ("female")}
@@ -22,8 +22,8 @@ function FilterByGender({filterGender, setFilterGender}) {
             Mujer
         </label>
 
-        <label htmlFor="male">
-            <input
+        <label htmlFor="male" className="check-label" >
+            <input className="checkbox"
             type="checkbox"
             value= "male"
             checked = {filterGender.includes ("male")}
