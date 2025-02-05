@@ -18,17 +18,20 @@ function CharacterDetail({info}) {
 
 
   return (
-    <div>
-      <img src={info.image} alt={info.name} />
-      <h1>{info.name}</h1>
-      <p>Estatus:
-         {info.alive === true ? <i className="fa-solid fa-heart-circle-check" ></i> : <i className="fa-solid fa-heart-circle-xmark"></i>}
-         </p>
-      <p>Género: {info.gender}</p>
-      <p>Especie: {info.species === "human" ? <i className="fa-solid fa-user"></i> : <i className="fa-brands fa-reddit-alien"></i>}</p>
-      <p>Casa: {info.house}
-      <img src={getHouseImage(info.house)} alt={`Escudo de ${info.house}`} />
-      </p>
+    <div className="page_detail" >
+      <div className="detail-card" >
+        <h1 className="detail-h1" >{info.name}</h1>
+        <img className="detail-img" src={info.image} alt={info.name} />
+        <div className="detail-info" >
+          <p>Estatus:
+             {info.alive === true ? <i className="fa-solid fa-heart-circle-check" ></i> : <i className="fa-solid fa-heart-circle-xmark"></i>}
+             </p>
+          <p>Género: {info.gender}</p>
+          <p>Especie: {info.species === "human" ? <i className="fa-solid fa-user"></i> : <i className="fa-brands fa-reddit-alien"></i>}</p>
+          <p>Casa: {info.house}</p>
+        </div>
+        <img className="detail-logo" src={getHouseImage(info.house)} alt={`Escudo de ${info.house}`} />
+      </div>
     </div>
   )
 }

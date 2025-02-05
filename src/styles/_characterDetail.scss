@@ -1,0 +1,59 @@
+.page_detail{
+    margin: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.detail-card{
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $color_amarillo;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 10px; 
+    background-color: #fff; 
+    transition: transform 0.3s ease-in-out; 
+    font-family: $font_text;
+    gap: 5px;
+    font-size: 1.5rem;
+    color: $color_amarillo;
+   
+}
+
+.detail-h1{
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 15px;
+}
+.detail-info{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 5px;
+}
+
+.detail-img{
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.detail-logo{
+    width: 50px;
+    margin: 3px;
+    padding-bottom: 15px;
+   
+}
+.detail-house{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    
+}

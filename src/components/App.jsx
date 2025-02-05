@@ -31,7 +31,7 @@ function App() {
   .filter((item) => filterGender.length > 0 ? filterGender.includes(item.gender) : true)
   .filter((item) => isWizard ? item.wizard : true);
   
-  const noResultsMessage = filterCharacter.length === 0 && filterName ? <p className="message-error" >No hay ningún personaje que coincida con la búsqueda</p> : "";
+  const noResultsMessage = filterCharacter.length === 0 && filterName ? "No hay ningún personaje que coincida con la búsqueda" : "";
 
 
   const {pathname} = useLocation();
