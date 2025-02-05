@@ -14,7 +14,7 @@ function App() {
   const [filterHouse, setFilterHouse] = useState ("Gryffindor")
   const [filterGender, setFilterGender] = useState ([])
   const [isWizard, setIsWizard] = useState (false)
-
+ 
   useEffect(()=>{
     api(filterHouse)
     .then((data)=>{
@@ -37,6 +37,13 @@ function App() {
   const characterIdUrl = characterRoute ? characterRoute.params.idCharacter : null;
   const characterInfo = characters.find(item => item.id === characterIdUrl);
 
+  const handleReset = () => {
+    setFilterName("");
+    setFilterHouse("all"); // Resetea a "all" para mostrar todas las casas
+    setFilterGender([]);
+    setIsWizard(false);
+  };
+
 
   return (
    <>
@@ -53,11 +60,15 @@ function App() {
         filterGender = {filterGender}
         setIsWizard = {setIsWizard}
         isWizard = {isWizard}
-
+        handleReset = {handleReset}
         />
-        <CharacterList characters = {filterCharacter}
-        noResultsMessage = {noResultsMessage} />
+        
+        <CharacterList 
+        characters = {filterCharacter}
+        noResultsMessage = {noResultsMessage} 
+        />
         </>
+        
       }/>
       <Route path="/character/:name/:idCharacter" element = {<CharacterDetail info = {characterInfo} />} />
       <Route path="*" element = {<NotFound/>}/>

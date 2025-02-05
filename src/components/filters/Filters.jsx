@@ -3,9 +3,10 @@ import FilterByHouse from "./FilterByHouse";
 import PropTypes from "prop-types";
 import FilterByGender from "./FilterByGender";
 import FilterByWizard from "./FilterByWizard";
+import BtnReset from "./BtnReset";
 
 
-function Filters({setFilterName, setFilterHouse, filterHouse, filterName, filterGender,setFilterGender, isWizard, setIsWizard}) {
+function Filters({setFilterName, setFilterHouse, filterHouse, filterName, filterGender,setFilterGender, isWizard, setIsWizard, handleReset}) {
   const handleForm = (ev) => {
     ev.preventDefault();
 
@@ -30,6 +31,9 @@ function Filters({setFilterName, setFilterHouse, filterHouse, filterName, filter
       setIsWizard = {setIsWizard}
       isWizard = {isWizard}
       />
+      <BtnReset 
+      handleReset = {handleReset}
+      />
    </form>
   )
 }
@@ -41,8 +45,9 @@ Filters.propTypes = {
   setFilterGender: PropTypes.func,
   filterGender: PropTypes.array,
   isWizard: PropTypes.bool,
-  setIsWizard: PropTypes.func
-
+  setIsWizard: PropTypes.func,
+  handleReset: PropTypes.func,
+  
 }
 
 export default Filters
