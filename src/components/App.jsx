@@ -1,23 +1,24 @@
 import { Route, Routes } from "react-router-dom";
 import "../styles/App.scss";
-import CharacterList from "./CharacterList";
+import CharacterList from "./characters/CharacterList";
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import Filters from "./Filters";
+import Filters from "./filters/Filters";
 
 
 function App() {
   const [characters, setCharacters] = useState([])
   const [filterName, setFilterName] = useState("")
-  const [filterHouse, setFilterHouse] = useState ("all")
+  const [filterHouse, setFilterHouse] = useState ("Gryffindor")
 
   useEffect(()=>{
-    api().then((data)=>{setCharacters(data)})
+    api(filterHouse)
+    .then((data)=>{setCharacters(data)})
   }, [])
 
   const filterCharacter = characters
   .filter((item) => item.name.toLowerCase().includes(filterName))
-  .filter((item) => filterHouse === "all" || item.house === filterHouse)
+  .filter((item) => filterHouse === "all" || item.house === filterHouse);
 
   return (
    <>
