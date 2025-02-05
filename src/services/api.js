@@ -1,17 +1,15 @@
-function api (){
+function api (house){
     return fetch(
-        'https://hp-api.onrender.com/api/characters/'
+        `https://hp-api.onrender.com/api/characters/house/${house}`
     )
     .then((resp) => resp.json())
-    .then((data)=>{
-        //console.log(Array.isArray(data));
+    .then((data)=>{  
         const newArray = data.map((character)=>{
-            const image = character.image ? character.image : 'https://placehold.co/200x300';
             return {
                 id: character.id,
                 name: character.name,
                 species: character.species,
-                image: image,
+                image: character.image || 'https://placehold.co/200x300',
                 gender: character.gender,
                 house: character.house,
                 alive: character.alive

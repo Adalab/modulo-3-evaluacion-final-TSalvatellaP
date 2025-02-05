@@ -9,16 +9,16 @@ import Filters from "./filters/Filters";
 function App() {
   const [characters, setCharacters] = useState([])
   const [filterName, setFilterName] = useState("")
-  const [filterHouse, setFilterHouse] = useState ("Gryffindor")
+  const [filterHouse, setFilterHouse] = useState ("")
 
   useEffect(()=>{
-    api(filterHouse)
+    api(filterHouse || "gryffindor")
     .then((data)=>{setCharacters(data)})
-  }, [])
+  }, [filterHouse])
 
   const filterCharacter = characters
   .filter((item) => item.name.toLowerCase().includes(filterName))
-  .filter((item) => filterHouse === "all" || item.house === filterHouse);
+  .filter((item) => filterHouse ? item.house === filterHouse : true );
 
   return (
    <>
