@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 45px;
+    padding-top: 45px;
 }
 
 .list {
@@ -20,21 +22,29 @@
 }
 
 .card{
+    width: 200px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid $color_amarillo;
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     padding: 10px; 
     background-color: #fff; 
     transition: transform 0.3s ease-in-out; 
+    font-family: $font_text;
+    gap: 5px;
+    font-size: 1.5rem;
+    color: $color_amarillo;
    
 }
 
 .card_img{
-    width: 200px;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
 }
 .message-error{
     font-family: $font_text;
