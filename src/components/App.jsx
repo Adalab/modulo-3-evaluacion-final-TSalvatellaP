@@ -19,7 +19,9 @@ function App() {
 
   const filterCharacter = characters
   .filter((item) => item.name.toLowerCase().includes(filterName))
-  .filter((item) => filterHouse ? item.house === filterHouse : true );
+  .filter((item) => filterHouse ? item.house === filterHouse : true )
+  .sort((a, b) => a.name.localeCompare(b.name));
+  
   const noResultsMessage = filterCharacter.length === 0 && filterName ? "No hay ningún personaje que coincida con la búsqueda" : "";
 
 
