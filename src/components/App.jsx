@@ -20,6 +20,7 @@ function App() {
   const filterCharacter = characters
   .filter((item) => item.name.toLowerCase().includes(filterName))
   .filter((item) => filterHouse ? item.house === filterHouse : true );
+  const noResultsMessage = filterCharacter.length === 0 && filterName ? "No hay ningún personaje que coincida con la búsqueda" : "";
 
 
   const {pathname} = useLocation();
@@ -38,8 +39,10 @@ function App() {
       setFilterHouse = {setFilterHouse}
       filterName = {filterName}
       filterHouse = {filterHouse}
+      
       />
-      <CharacterList characters = {filterCharacter} />
+      <CharacterList characters = {filterCharacter}
+      noResultsMessage = {noResultsMessage} />
       </>
     }/>
     <Route path="/character/:name/:idCharacter" element = {<CharacterDetail info = {characterInfo} />} />
