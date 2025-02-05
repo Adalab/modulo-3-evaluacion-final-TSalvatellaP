@@ -31,22 +31,24 @@ function App() {
 
   return (
    <>
-   <Routes>
-    <Route path="/" element = {
-      <>      
-      <Filters 
-      setFilterName = {setFilterName}
-      setFilterHouse = {setFilterHouse}
-      filterName = {filterName}
-      filterHouse = {filterHouse}
-      
-      />
-      <CharacterList characters = {filterCharacter}
-      noResultsMessage = {noResultsMessage} />
-      </>
-    }/>
-    <Route path="/character/:name/:idCharacter" element = {<CharacterDetail info = {characterInfo} />} />
-   </Routes>
+   <div className="page_main">
+     <Routes>
+      <Route path="/" element = {
+        <>
+        <Filters
+        setFilterName = {setFilterName}
+        setFilterHouse = {setFilterHouse}
+        filterName = {filterName}
+        filterHouse = {filterHouse}
+     
+        />
+        <CharacterList characters = {filterCharacter}
+        noResultsMessage = {noResultsMessage} />
+        </>
+      }/>
+      <Route path="/character/:name/:idCharacter" element = {<CharacterDetail info = {characterInfo} />} />
+     </Routes>
+   </div>
    </>
   )
 }

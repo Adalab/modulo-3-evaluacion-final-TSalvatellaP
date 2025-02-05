@@ -6,7 +6,7 @@ function CharacterList({characters, noResultsMessage}) {
 
 
   return (
-    <div>
+    <div className="list" >
       {html}
       {noResultsMessage}
     </div>

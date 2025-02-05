@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function CharacterCard({info}) {
   return (
-    <article>
+    <article className="card" >
       <Link to={`/character/${info.name}/${info.id}`}>
-          <img src={info.image} alt={info.name} />
+          <img className="card_img" src={info.image} alt={info.name} />
           <h1>{info.name}</h1>
           <p>{info.species}</p>
       </Link>
