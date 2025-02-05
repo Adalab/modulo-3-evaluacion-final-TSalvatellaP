@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 
 function CharacterCard({info}) {
   return (
@@ -8,6 +8,10 @@ function CharacterCard({info}) {
       <p>{info.species}</p>
     </article>
   )
+}
+
+CharacterCard.propTypes = {
+  info: PropTypes.object
 }
 
 export default CharacterCard

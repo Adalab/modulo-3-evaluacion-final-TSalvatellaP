@@ -28,6 +28,8 @@ function App() {
       <Filters 
       setFilterName = {setFilterName}
       setFilterHouse = {setFilterHouse}
+      filterName = {filterName}
+      filterHouse = {filterHouse}
       />
       <CharacterList characters = {filterCharacter} />
       </>
