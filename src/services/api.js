@@ -12,7 +12,7 @@ function api (house){
                 image: character.image || 'https://placehold.co/200x300',
                 gender: character.gender,
                 house: character.house,
-                alive: character.alive
+                alive: character.alive,
             }
             
         });
