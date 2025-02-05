@@ -11,12 +11,12 @@ import NotFound from "./NotFound";
 function App() {
   const [characters, setCharacters] = useState([])
   const [filterName, setFilterName] = useState("")
-  const [filterHouse, setFilterHouse] = useState ("")
+  const [filterHouse, setFilterHouse] = useState ("Gryffindor")
   const [filterGender, setFilterGender] = useState ([])
-  const [isWizard, setIsWizard] = useState ()
+  const [isWizard, setIsWizard] = useState (false)
 
   useEffect(()=>{
-    api(filterHouse || "gryffindor")
+    api(filterHouse)
     .then((data)=>{
       setCharacters(data);
     })
@@ -24,10 +24,10 @@ function App() {
 
   const filterCharacter = characters
   .filter((item) => item.name.toLowerCase().includes(filterName))
-  .filter((item) => filterHouse ? item.house === filterHouse : true )
+  .filter((item) => filterHouse === "all" || item.house === filterHouse)
   .sort((a, b) => a.name.localeCompare(b.name))
   .filter((item) => filterGender.length > 0 ? filterGender.includes(item.gender) : true)
-  .filter((item) => !isWizard || item.wizard);
+  .filter((item) => isWizard ? item.wizard : true);
   
   const noResultsMessage = filterCharacter.length === 0 && filterName ? "No hay ningún personaje que coincida con la búsqueda" : "";
 
