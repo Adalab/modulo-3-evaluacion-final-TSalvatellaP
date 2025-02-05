@@ -13,6 +13,7 @@ function App() {
   const [filterName, setFilterName] = useState("")
   const [filterHouse, setFilterHouse] = useState ("")
   const [filterGender, setFilterGender] = useState ([])
+  const [isWizard, setIsWizard] = useState ()
 
   useEffect(()=>{
     api(filterHouse || "gryffindor")
@@ -26,6 +27,7 @@ function App() {
   .filter((item) => filterHouse ? item.house === filterHouse : true )
   .sort((a, b) => a.name.localeCompare(b.name))
   .filter((item) => filterGender.length > 0 ? filterGender.includes(item.gender) : true)
+  .filter((item) => !isWizard || item.wizard);
   
   const noResultsMessage = filterCharacter.length === 0 && filterName ? "No hay ningún personaje que coincida con la búsqueda" : "";
 
@@ -49,8 +51,9 @@ function App() {
         filterHouse = {filterHouse}
         setFilterGender = {setFilterGender}
         filterGender = {filterGender}
+        setIsWizard = {setIsWizard}
+        isWizard = {isWizard}
 
-     
         />
         <CharacterList characters = {filterCharacter}
         noResultsMessage = {noResultsMessage} />
