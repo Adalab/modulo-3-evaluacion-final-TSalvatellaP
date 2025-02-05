@@ -1,9 +1,10 @@
 import FilterByName from "./FilterByName";
 import FilterByHouse from "./FilterByHouse";
 import PropTypes from "prop-types";
+import FilterByGender from "./FilterByGender";
 
 
-function Filters({setFilterName, setFilterHouse, filterHouse, filterName }) {
+function Filters({setFilterName, setFilterHouse, filterHouse, filterName, filterGender,setFilterGender}) {
   const handleForm = (ev) => {
     ev.preventDefault();
 
@@ -20,6 +21,10 @@ function Filters({setFilterName, setFilterHouse, filterHouse, filterName }) {
       setFilterHouse = {setFilterHouse} 
       filterHouse = {filterHouse} 
       />
+      <FilterByGender 
+      setFilterGender = {setFilterGender}
+      filterGender = {filterGender}
+      />
    </form>
   )
 }
@@ -27,7 +32,10 @@ Filters.propTypes = {
   setFilterName: PropTypes.func,
   setFilterHouse: PropTypes.func,
   filterHouse: PropTypes.string,
-  filterName: PropTypes.string
+  filterName: PropTypes.string,
+  setFilterGender: PropTypes.func,
+  filterGender: PropTypes.array
+
 }
 
 export default Filters
