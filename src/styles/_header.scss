@@ -1,0 +1,12 @@
+.page_header{
+    background-color: $color_claro;
+    padding: 45px;
+    display: flex;
+    justify-content: center;
+   }
+.logo{
+    width: 50%;
+    @media(min-width: 768px){
+        width: 20%;
+    }
+}

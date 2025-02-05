@@ -5,9 +5,9 @@ function FilterByHouse({setFilterHouse, filterHouse}) {
     setFilterHouse (ev.target.value)
   }
   return (
-    <div>
+    <div className="filter-container" >
       <label htmlFor="house">Selecciona la casa:</label>
-      <select name="house" id="house" onChange = {handleSelect} value={filterHouse}>
+      <select className="input-filter" name="house" id="house" onChange = {handleSelect} value={filterHouse}>
         <option value="all">Todos los personajes</option>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Hufflepuff">Hufflepuff</option>

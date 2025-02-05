@@ -1,10 +1,9 @@
 .page_main{
-    margin: 45px;
+    background-color: $color_claro;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .list {
@@ -36,4 +35,11 @@
 
 .card_img{
     width: 200px;
+}
+.message-error{
+    font-family: $font_text;
+    font-size: 2rem;
+    color: $color_burdeos;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

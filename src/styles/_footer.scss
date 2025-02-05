@@ -1,0 +1,9 @@
+.page_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font_text;
+    color: $color_claro;
+    background-color: $color_gris;
+    padding: 45px;
+}

@@ -6,6 +6,8 @@ import api from "../services/api";
 import Filters from "./filters/Filters";
 import CharacterDetail from "./characters/CharacterDetail";
 import NotFound from "./NotFound";
+import Header from "./Header";
+import Footer from "./Footer";
 
 
 function App() {
@@ -29,7 +31,7 @@ function App() {
   .filter((item) => filterGender.length > 0 ? filterGender.includes(item.gender) : true)
   .filter((item) => isWizard ? item.wizard : true);
   
-  const noResultsMessage = filterCharacter.length === 0 && filterName ? "No hay ningún personaje que coincida con la búsqueda" : "";
+  const noResultsMessage = filterCharacter.length === 0 && filterName ? <p className="message-error" >No hay ningún personaje que coincida con la búsqueda</p> : "";
 
 
   const {pathname} = useLocation();
@@ -39,42 +41,44 @@ function App() {
 
   const handleReset = () => {
     setFilterName("");
-    setFilterHouse("all"); // Resetea a "all" para mostrar todas las casas
+    setFilterHouse("all"); 
     setFilterGender([]);
     setIsWizard(false);
   };
 
 
   return (
-   <>
-   <div className="page_main">
-     <Routes>
-      <Route path="/" element = {
-        <>
-        <Filters
-        setFilterName = {setFilterName}
-        setFilterHouse = {setFilterHouse}
-        filterName = {filterName}
-        filterHouse = {filterHouse}
-        setFilterGender = {setFilterGender}
-        filterGender = {filterGender}
-        setIsWizard = {setIsWizard}
-        isWizard = {isWizard}
-        handleReset = {handleReset}
-        />
-        
-        <CharacterList 
-        characters = {filterCharacter}
-        noResultsMessage = {noResultsMessage} 
-        />
-        </>
-        
-      }/>
-      <Route path="/character/:name/:idCharacter" element = {<CharacterDetail info = {characterInfo} />} />
-      <Route path="*" element = {<NotFound/>}/>
-     </Routes>
-   </div>
-   </>
+  <>
+  <Header/>
+  <div className="page_main" >
+       <Routes>
+        <Route path="/" element = {
+          <>
+          <Filters
+          setFilterName = {setFilterName}
+          setFilterHouse = {setFilterHouse}
+          filterName = {filterName}
+          filterHouse = {filterHouse}
+          setFilterGender = {setFilterGender}
+          filterGender = {filterGender}
+          setIsWizard = {setIsWizard}
+          isWizard = {isWizard}
+          handleReset = {handleReset}
+          />
+       
+          <CharacterList
+          characters = {filterCharacter}
+          noResultsMessage = {noResultsMessage}
+          />
+          </>
+       
+        }/>
+        <Route path="/character/:name/:idCharacter" element = {<CharacterDetail info = {characterInfo} />} />
+        <Route path="*" element = {<NotFound/>}/>
+       </Routes>
+  </div>
+  <Footer />
+  </>
   )
 }
 

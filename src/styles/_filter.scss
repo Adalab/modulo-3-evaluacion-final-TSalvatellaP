@@ -11,11 +11,32 @@
 .filters {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 
 }
+.filter-container{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+.input-filter{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    font-family: $font_text;
+    font-size: 2rem;
+    color: $color_amarillo;
+    border: 2px solid $color_burdeos;
+    
+}
+
 .checks {
+    font-size: 1.5rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
