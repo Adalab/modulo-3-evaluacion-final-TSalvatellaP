@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 function CharacterDetail({info}) {
+  
   const getHouseImage = (house) => {
     if (house === "Gryffindor"){
       return "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTyeGE0B7FFvyj9ZeSEbjQYXS1aL7_6x2fcMAVmEg1O0C0QMJEY6ctUEzTFqxFuxIpBoXnm6DVWbdo4qxExPoCp8Be9xy4_SNHbh6ZpikucaRgpUGgSJ22Fgoxeeb9ni7gV7ZWRrKBuWQ&usqp=CAc";
