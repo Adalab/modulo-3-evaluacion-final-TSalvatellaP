@@ -66,6 +66,13 @@
     gap: 5px;
     
 }
+.error-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:50vh;
+
+}
 .message-error{
     font-family: $font_text;
     font-size: 2rem;

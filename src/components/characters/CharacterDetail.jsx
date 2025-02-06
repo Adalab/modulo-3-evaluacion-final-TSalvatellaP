@@ -19,9 +19,11 @@ function CharacterDetail({info}) {
   }
 
   return (
-    <div className="page_detail" >
-      {info ?
-      (<div className="detail-card" >
+    <>
+   
+    {info ?(
+     <div className="page_detail" >
+      <div className="detail-card" >
         <h1 className="detail-h1" >{info.name}</h1>
         <img className="detail-img" src={info.image} alt={info.name} />
         <div className="detail-info" >
@@ -41,15 +43,20 @@ function CharacterDetail({info}) {
           <p>Casa: {info.house}</p>
         </div>
         {info.house &&
-        (<img className="detail-logo" src={getHouseImage(info.house)} alt={`Escudo de ${info.house}`} />)
-        }
+        (<img className="detail-logo" src={getHouseImage(info.house)} alt={`Escudo de ${info.house}`} />
+          )}
       </div>
-      )
-      : (
+     </div>
+      
+      ) : (
+      <div className="error-container" >
         <p className="message-error">No hay ningún personaje que coincida con la búsqueda</p>
-      )}
-     <Link to="/"><button className="detail-btn" >Volver al inicio</button></Link> 
-    </div>
+      </div>)
+    }
+     
+    
+    <Link to="/"><button className="detail-btn" >Volver al inicio</button></Link> 
+    </>
   )
 }
 

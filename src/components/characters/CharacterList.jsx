@@ -13,7 +13,7 @@ function CharacterList({characters}) {
     </div>
 
       {characters.length === 0 && (
-      <div>
+      <div className="error-container" >
         <p className="message-error">
           No hay ningún personaje que coincida con la búsqueda
         </p>
