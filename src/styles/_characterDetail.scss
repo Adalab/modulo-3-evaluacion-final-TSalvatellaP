@@ -57,3 +57,13 @@
     gap: 5px;
     
 }
+.message-error{
+    font-family: $font_text;
+    font-size: 2rem;
+    color: $color_burdeos;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.detail-btn{
+    @include button();
+}

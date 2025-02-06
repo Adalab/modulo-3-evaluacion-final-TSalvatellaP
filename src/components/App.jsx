@@ -31,9 +31,6 @@ function App() {
   .sort((a, b) => a.name.localeCompare(b.name))
   .filter((item) => filterGender.length > 0 ? filterGender.includes(item.gender) : true)
   .filter((item) => isWizard ? item.wizard : true);
-  
-  const noResultsMessage = filterCharacter.length === 0 && filterName ? "No hay ningún personaje que coincida con la búsqueda" : "";
-
 
   const {pathname} = useLocation();
   const characterRoute = matchPath ("/character/:name/:idCharacter", pathname);
@@ -68,7 +65,6 @@ function App() {
           />
           <CharacterList
           characters = {filterCharacter}
-          noResultsMessage = {noResultsMessage}
           />
           </>
         }/>

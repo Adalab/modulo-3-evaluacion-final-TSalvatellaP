@@ -1,21 +1,22 @@
 import CharacterCard from "./CharacterCard"
 import PropTypes from "prop-types";
 
-function CharacterList({characters, noResultsMessage}) {
-    const html = characters.map (character => <CharacterCard key={character.id} info={character} /> )
-
-
+function CharacterList({characters}) {
+   
   return (
     <div className="list" >
-      {html}
-      {noResultsMessage}
+    {characters && characters.length > 0 
+      ?(characters.map ((character) => (
+        <CharacterCard key={character.id} info={character} />))
+        )
+      :(<p className="message-error"> No hay ningún personaje que coincida con la búsqueda</p>)
+    }
     </div>
   )
 }
 
 CharacterList.propTypes = {
   characters: PropTypes.array,
-  noResultsMessage: PropTypes.string
-}
+  }
 
 export default CharacterList

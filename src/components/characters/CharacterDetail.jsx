@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import castle from "/src/images/castle_9851094.png";
+import { Link } from 'react-router-dom';
 
 function CharacterDetail({info}) {
   
@@ -47,6 +48,7 @@ function CharacterDetail({info}) {
       : (
         <p className="error-message">No hay ningún personaje que coincida con la búsqueda</p>
       )}
+     <Link to="/"><button className="detail-btn" >Volver al inicio</button></Link> 
     </div>
   )
 }
