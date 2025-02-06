@@ -46,7 +46,7 @@ function CharacterDetail({info}) {
       </div>
       )
       : (
-        <p className="error-message">No hay ningún personaje que coincida con la búsqueda</p>
+        <p className="message-error">No hay ningún personaje que coincida con la búsqueda</p>
       )}
      <Link to="/"><button className="detail-btn" >Volver al inicio</button></Link> 
     </div>
