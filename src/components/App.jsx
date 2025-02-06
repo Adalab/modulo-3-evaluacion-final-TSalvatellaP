@@ -1,13 +1,14 @@
 import { matchPath, Route, Routes, useLocation,} from "react-router-dom";
 import "../styles/App.scss";
 import CharacterList from "./characters/CharacterList";
+import Header from "./Header";
+import Footer from "./Footer";
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import Filters from "./filters/Filters";
 import CharacterDetail from "./characters/CharacterDetail";
 import NotFound from "./NotFound";
-import Header from "./Header";
-import Footer from "./Footer";
+
 
 
 function App() {
@@ -49,9 +50,9 @@ function App() {
 
   return (
   <>
-  <Header/>
-  <div className="page_main" >
-       <Routes>
+    <Header/>
+    <div className="page_main" >
+      <Routes>
         <Route path="/" element = {
           <>
           <Filters
@@ -65,19 +66,18 @@ function App() {
           isWizard = {isWizard}
           handleReset = {handleReset}
           />
-       
           <CharacterList
           characters = {filterCharacter}
           noResultsMessage = {noResultsMessage}
           />
           </>
-       
         }/>
-        <Route path="/character/:name/:idCharacter" element = {<CharacterDetail info = {characterInfo} />} />
+        <Route path="/character/:name/:idCharacter" element = {<CharacterDetail info = {characterInfo} />
+          }/>
         <Route path="*" element = {<NotFound/>}/>
-       </Routes>
-  </div>
-  <Footer />
+      </Routes>
+    </div>
+    <Footer />
   </>
   )
 }
