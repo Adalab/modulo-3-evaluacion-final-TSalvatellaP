@@ -42,7 +42,7 @@ Esta aplicación web permite a los usuarios buscar y filtrar personajes de la sa
 
 ## Uso
 
-1. Inicia la aplicación: `npm start`
+1. Inicia la aplicación: `npm run dev`
 2. Abre la aplicación en tu navegador: `http://localhost:3000`
 3. Utiliza el cuadro de texto para buscar personajes por nombre.
 4. Utiliza el menú desplegable para filtrar personajes por casa.
@@ -101,7 +101,9 @@ Este proyecto fue desarrollado por [Tania_Salvatella].
 
 ## Ejemplo de uso
 
-Aquí puedes incluir una captura de pantalla o un GIF mostrando el funcionamiento de la aplicación.
+![Ejempolo 1](src/images/readme-1.PNG)
+![Ejempolo 2](src/images/readme-2.PNG)
+![Ejempolo 3](src/images/readme-3.PNG)
 
 ## Notas adicionales
 

@@ -11,7 +11,7 @@ function api (house){
                 id: character.id,
                 name: character.name,
                 species: character.species,
-                image: character.image || 'https://placehold.co/200x300',
+                image: character.image || "/src/images/file_15140689.png",
                 gender: character.gender,
                 house: character.house || "Sin casa",
                 alive: character.alive,
