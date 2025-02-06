@@ -14,10 +14,12 @@
     gap: 15px;
     justify-items: center;
     align-items: center;
-    @media(min-width: 768px){
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(3, 1fr);  
-
+    @media(min-width: 720px){
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media(min-width: 1440px){
+        grid-template-columns: repeat(6, 1fr);
+     
     }
 }
 
@@ -38,6 +40,15 @@
     gap: 5px;
     font-size: 1.5rem;
     color: $color_amarillo;
+    @media(min-width: 360px){
+        width: 250px;
+        height: 350px;
+     }
+    @media(min-width: 720px){
+        width: 200px;
+        height: 300px;
+
+    }
    
 }
 
