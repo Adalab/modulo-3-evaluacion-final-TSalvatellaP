@@ -53,6 +53,7 @@ Esta aplicación web permite a los usuarios buscar y filtrar personajes de la sa
 
 
 ## Estructura de carpetas
+```
 proyecto-harry-potter/
 ├── node_modules/         #Dependencias del proyecto
 ├── public/               # Archivos estáticos
@@ -92,7 +93,7 @@ proyecto-harry-potter/
 ├── package.json           # Archivo de configuración del proyecto
 ├── README.md              # Archivo README del proyecto
 └── vite.config.js         # Archivo de configuración de Vite
-
+```
 ## Créditos
 
 Este proyecto fue desarrollado por [Tania_Salvatella].
