@@ -1,18 +1,22 @@
 import PropTypes from "prop-types";
 import castle from "/src/images/castle_9851094.png";
+import Gryffindor from "/src/images/griffindor.jpg";
+import Hufflepuff from "/src/images/hufflepuff.jpg";
+import Ravenclaw from "/src/images/ravenclaw.jpg";
+import Slytherin from "/src/images/slytherin.jpg";
 import { Link } from 'react-router-dom';
 
 function CharacterDetail({info}) {
   
   const getHouseImage = (house) => {
     if (house === "Gryffindor"){
-      return "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTyeGE0B7FFvyj9ZeSEbjQYXS1aL7_6x2fcMAVmEg1O0C0QMJEY6ctUEzTFqxFuxIpBoXnm6DVWbdo4qxExPoCp8Be9xy4_SNHbh6ZpikucaRgpUGgSJ22Fgoxeeb9ni7gV7ZWRrKBuWQ&usqp=CAc";
+      return Gryffindor;
     } else if (house === "Slytherin") {
-      return "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSJHeUE2hNviuUdtY5eMkJB-QMXwPatH00ekzE2iiseifQWq1KUBNVFVIXOI6-DIbsns7sLxqOeA0UM0OXAjAgJQYnp1P4CxEQZjtMHpE0jTq_j32Yq9Q0DOQFsgAelWhr311arzydj8o4&usqp=CAc";
+      return Slytherin;
     } else if (house === "Ravenclaw"){
-      return "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQNVhkWKwpDLH2nMvVVIrKupomsAA76C_qBhIYpyT1kAhFnotttY9H4U2l9__nTtSc8D5nxUhI2PFNenq9Z2Iwq_hiQcCzLkRtCLdyRPiRRPk5r0YrPzOn6NLemSzTl0XpnS3JwsHgAcGo&usqp=CAc";
+      return Ravenclaw;
     } else if (house === "Hufflepuff"){
-      return "https://media.mykaramelli.com/galeria/articulos/decoracion-de-pared-emblema-hufflepuff-harry-potter-61cm_12419_1.jpg";
+      return Hufflepuff;
     } else {
       return castle;
     }
@@ -21,7 +25,7 @@ function CharacterDetail({info}) {
   return (
     <>
    
-    {info ?(
+    {info ? (
      <div className="page_detail" >
       <div className="detail-card" >
         <h1 className="detail-h1" >{info.name}</h1>
